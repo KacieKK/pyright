@@ -9,7 +9,7 @@
  */
 
 import { ConfigOptions } from '../common/configOptions';
-import { pythonVersion3_10, pythonVersion3_11, pythonVersion3_9 } from '../common/pythonVersion';
+import { pythonVersion3_10, pythonVersion3_11, pythonVersion3_13, pythonVersion3_9 } from '../common/pythonVersion';
 import { Uri } from '../common/uri/uri';
 import * as TestUtils from './testUtils';
 
@@ -560,7 +560,7 @@ test('Literals2', () => {
 test('Literals3', () => {
     const analysisResults = TestUtils.typeAnalyzeSampleFiles(['literals3.py']);
 
-    TestUtils.validateResults(analysisResults, 4);
+    TestUtils.validateResults(analysisResults, 5);
 });
 
 test('Literals4', () => {
@@ -578,7 +578,7 @@ test('Literals5', () => {
 test('Literals6', () => {
     const analysisResults = TestUtils.typeAnalyzeSampleFiles(['literals6.py']);
 
-    TestUtils.validateResults(analysisResults, 26);
+    TestUtils.validateResults(analysisResults, 25);
 });
 
 test('Literals7', () => {
@@ -602,7 +602,7 @@ test('TypeAlias2', () => {
 test('TypeAlias3', () => {
     const analysisResults = TestUtils.typeAnalyzeSampleFiles(['typeAlias3.py']);
 
-    TestUtils.validateResults(analysisResults, 0);
+    TestUtils.validateResults(analysisResults, 1);
 });
 
 test('TypeAlias4', () => {
@@ -993,9 +993,15 @@ test('Enum8', () => {
 });
 
 test('Enum9', () => {
-    const analysisResults = TestUtils.typeAnalyzeSampleFiles(['enum9.py']);
+    const configOptions = new ConfigOptions(Uri.empty());
 
-    TestUtils.validateResults(analysisResults, 0);
+    configOptions.defaultPythonVersion = pythonVersion3_11;
+    const analysisResults1 = TestUtils.typeAnalyzeSampleFiles(['enum9.py'], configOptions);
+    TestUtils.validateResults(analysisResults1, 0);
+
+    configOptions.defaultPythonVersion = pythonVersion3_13;
+    const analysisResults2 = TestUtils.typeAnalyzeSampleFiles(['enum9.py'], configOptions);
+    TestUtils.validateResults(analysisResults2, 0);
 });
 
 test('Enum10', () => {
@@ -1013,7 +1019,13 @@ test('Enum11', () => {
 test('Enum12', () => {
     const analysisResults = TestUtils.typeAnalyzeSampleFiles(['enum12.py']);
 
-    TestUtils.validateResults(analysisResults, 1);
+    TestUtils.validateResults(analysisResults, 2);
+});
+
+test('Enum13', () => {
+    const analysisResults = TestUtils.typeAnalyzeSampleFiles(['enum13.py']);
+
+    TestUtils.validateResults(analysisResults, 3);
 });
 
 test('EnumAuto1', () => {

@@ -93,7 +93,6 @@
         "concatenateTypeArgsMissing": "\"Birleştirme\" en az iki tür bağımsız değişken gerektirir",
         "conditionalOperandInvalid": "\"{type}\" türündeki koşullu işlenen geçersiz",
         "constantRedefinition": "\"{name}\" sabit (büyük harf olduğundan) ve yeniden tanımlanamaz",
-        "constructorNoArgs": "\"{type}\" oluşturucusu için bağımsız değişken beklenmiyordu",
         "constructorParametersMismatch": "\"{classType}\" sınıfındaki __new__ ve __init__ imzaları arasında uyuşmazlık var",
         "containmentAlwaysFalse": "\"{leftType}\" türleri ve \"{rightType}\" türleri çakışmadığından ifade her zaman False olarak değerlendirilir",
         "containmentAlwaysTrue": "\"{leftType}\" türleri ve \"{rightType}\" türleri çakışmadığından ifade her zaman True olarak değerlendirilir",
@@ -159,7 +158,7 @@
         "enumMemberSet": "Sabit liste üyesi \"{name}\" atanamıyor",
         "enumMemberTypeAnnotation": "Sabit listesi üyeleri için tür ek açıklamalarına izin verilmiyor",
         "exceptionGroupIncompatible": "Özel durum grubu söz dizimi (\"except*\") için Python 3.11 veya daha yeni bir sürümü gerekiyor",
-        "exceptionGroupTypeIncorrect": "Except* altındaki özel durum türü BaseGroupException değerinden türetilemiyor",
+        "exceptionGroupTypeIncorrect": "except* altındaki özel durum türü BaseGroupException değerinden türetilemiyor",
         "exceptionTypeIncorrect": "\"{type}\", BaseException türevi değil",
         "exceptionTypeNotClass": "\"{type}\" geçerli bir özel durum sınıfı değil",
         "exceptionTypeNotInstantiable": "\"{type}\" özel durum türü oluşturucusu bir veya daha fazla bağımsız değişken gerektiriyor",
@@ -403,7 +402,7 @@
         "protocolBaseClassWithTypeArgs": "Tür parametresi söz dizimi kullanılırken, tür bağımsız değişkenlerinin Protokol sınıfıyla kullanılmasına izin verilmez",
         "protocolIllegal": "\"Protocol\" kullanımı için Python 3.7 veya daha yeni bir sürümü gerekiyor",
         "protocolNotAllowed": "\"Protokol\" bu bağlamda kullanılamaz",
-        "protocolTypeArgMustBeTypeParam": "Type argument for \"Protocol\" must be a type parameter",
+        "protocolTypeArgMustBeTypeParam": "“Protokol” için tür bağımsız değişkeni bir tür parametresi olmalıdır",
         "protocolUnsafeOverlap": "Sınıf, \"{name}\" ile güvenli olmayan bir şekilde çakışıyor ve çalışma zamanında bir eşleşme üretebilir",
         "protocolVarianceContravariant": "\"{class}\" genel protokolünde kullanılan \"{variable}\" tür değişkeni, değişken karşıtı olmalıdır",
         "protocolVarianceCovariant": "\"{class}\" genel protokolünde kullanılan \"{variable}\" tür değişkeni birlikte değişen olmalıdır",
@@ -496,7 +495,7 @@
         "typeCallNotAllowed": "Tür ek açıklamasında type() çağrısı kullanılmamalıdır",
         "typeCheckOnly": "\"{name}\", @type_check_only olarak işaretlendi ve yalnızca tür ek açıklamalarında kullanılabilir",
         "typeCommentDeprecated": "Tür açıklamalarının kullanımı kullanım dışı; bunun yerine tür ek açıklaması kullanın",
-        "typeExpectedClass": "Tür ifadesi bekleniyordu ancak \"{type}\" alındı",
+        "typeExpectedClass": "Sınıf bekleniyordu ancak \"{type}\" alındı",
         "typeGuardArgCount": "\"TypeGuard\" veya \"Typels\" sonrasında tek bir tür bağımsız değişken bekleniyordu",
         "typeGuardParamCount": "Kullanıcı tanımlı tür koruma işlevleri ve metotlarında en az bir giriş parametresi olmalıdır",
         "typeIsReturnType": "TypeIs dönüş türü (\"{returnType}\"), değer parametresi türü (\"{type}\") ile tutarlı değil",
@@ -670,6 +669,7 @@
         "invariantSuggestionDict": "“dict” öğesinden değer türünde eş değişken olan “Mapping” öğesine geçmeyi deneyin",
         "invariantSuggestionList": "“list” öğesinden eş değişken olan “Sequence” öğesine geçmeyi deneyin",
         "invariantSuggestionSet": "“Küme” öğesinden eş değişken olan “Kapsayıcı” öğesine geçmeyi deneyin",
+        "isinstanceClassNotSupported": "\"{type}\", örnek ve sınıf denetimleri için desteklenmiyor",
         "keyNotRequired": "\"{name}\", \"{type}\" türünde gerekli bir anahtar olmadığından çalışma zamanı özel durumuna neden olabilir",
         "keyReadOnly": "\"{name}\", \"{type}\" içinde salt okunur",
         "keyRequiredDeleted": "\"{name}\" gerekli bir anahtar olduğundan silinemez",
@@ -804,5 +804,8 @@
         "useTypeInstead": "Bunun yerine Type[T] kullanın",
         "varianceMismatchForClass": "\"{typeVarName}\" tür bağımsız değişkeni \"{className}\" taban sınıfıyla uyumsuz",
         "varianceMismatchForTypeAlias": "\"{typeVarName}\" tür bağımsız değişkeninin varyansı, \"{typeAliasParam}\" ile uyumsuz"
+    },
+    "Service": {
+        "longOperation": "Çalışma alanı kaynak dosyalarının numaralandırılması uzun zaman alıyor. Bunun yerine bir alt klasör açabilirsiniz. [Daha fazla bilgi edinin](https://aka.ms/workspace-too-many-files)"
     }
 }
